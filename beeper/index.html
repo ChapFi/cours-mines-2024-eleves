@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Beeper</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./variables.css" />
+  </head>
+
+  <body>
+    <nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Beeper</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#"
+                >Timeline</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Mon profil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Déconnexion</a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Rechercher"
+              aria-label="Rechercher"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              Rechercher
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <form id="add-beep-form" class="mb-3 mt-3">
+        <div class="mb-3">
+          <label for="message" class="form-label">Message</label>
+          <input type="text" required id="message" name="message" class="form-control" />
+        </div>
+
+        <div class="text-end">
+          <input type="reset" class="btn btn-danger" />
+          <button type="submit" class="btn btn-primary">Envoyer</button>
+        </div>
+      </form>
+
+      <hr />
+
+      <div id="beeps"></div>
+    </div>
+
+    <template id="beep-template">
+      <div class="card mb-3">
+        <div class="card-body">
+          <h6 class="card-subtitle mb-2 text-body-secondary">
+            Auteur - il y a 2h
+          </h6>
+          <p class="card-text beep-message">Mon premier beep.</p>
+          <span>6 likes</span>
+          <a href="#" class="card-link">Liker</a>
+          <a href="#" class="card-link">Répondre</a>
+        </div>
+      </div>
+    </template>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./BeepElement.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
